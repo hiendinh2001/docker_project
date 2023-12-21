@@ -1,0 +1,277 @@
+{% extends 'layout/base.html' %}
+
+{% block title %} Blog {% endblock %}
+
+{% block content %}
+
+<section class="home-slider owl-carousel">
+	<div class="slider-item bread-item" style="background-image: url('static/images/bg_1.jpg');"
+		data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container" data-scrollax-parent="true">
+			<div class="row slider-text align-items-end">
+				<div class="col-md-7 col-sm-12 ftco-animate mb-5">
+					<p class="breadcrumbs" data-scrollax=" properties: { translateY: '70%', opacity: 1.6}"><span
+							class="mr-2"><a href="/">Home</a></span> <span>Blog</span></p>
+					<h1 class="mb-3" data-scrollax=" properties: { translateY: '70%', opacity: .9}">Read Our Blog</h1>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="ftco-section">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-8">
+				<div class="row">
+					<div class="col-md-12 ftco-animate">
+						<div class="blog-entry">
+							<a href="{{ url_for('blog_single_1') }}" class="block-20"
+								style="background-image: url('{{ url_for('static', filename='images/ortho1.jpg') }}');">
+							</a>
+							<div class="text d-flex py-4">
+								<div class="meta mb-3">
+									<div><a href="#">Sep. 20, 2021</a></div>
+									<div><a href="#">TRAN Marie </a></div>
+									<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+								</div>
+								<div class="desc pl-sm-3 pl-md-5">
+									<h3 class="heading"><a href="#">Orthodontic Treatment / Braces</a></h3>
+									<p>Dental braces are devices used to correct crowded or crooked teeth, or a
+										misaligned jaw, known as malocclusion.</p>
+									<p><a href="{{ url_for('blog_single_1') }}"
+											class="btn btn-primary btn-outline-primary">Read
+											more</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 ftco-animate">
+						<div class="blog-entry" data-aos-delay="100">
+							<a href="{{ url_for('blog_single_2') }}" class="block-20"
+								style="background-image: url('{{ url_for('static', filename='images/ortho2.jpg') }}');">
+							</a>
+							<div class="text d-flex py-4">
+								<div class="meta mb-3">
+									<div><a href="#">Sep. 20, 2021</a></div>
+									<div><a href="#">TRAN Marie </a></div>
+									<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+								</div>
+								<div class="desc pl-sm-3 pl-md-5">
+									<h3 class="heading"><a href="#">Dental Implants</a></h3>
+									<p>For many years, the only treatment options available for people with missing
+										teeth were bridges and dentures. But, today, dental implants are available.</p>
+									<p><a href="{{ url_for('blog_single_2') }}"
+											class="btn btn-primary btn-outline-primary">Read
+											more</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 ftco-animate">
+						<div class="blog-entry" data-aos-delay="200">
+							<a href="{{ url_for('blog_single_3') }}" class="block-20"
+								style="background-image: url('{{ url_for('static', filename='images/ortho3.jpg') }}');">
+							</a>
+							<div class="text d-flex py-4">
+								<div class="meta mb-3">
+									<div><a href="#">Sep. 20, 2021</a></div>
+									<div><a href="#">TRAN Marie </a></div>
+									<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+								</div>
+								<div class="desc pl-sm-3 pl-md-5">
+									<h3 class="heading"><a href="#">Teeth Whitening</a></h3>
+									<p>Want a brighter smile? When it comes to tooth-whitening, you've got two options:
+										in-office-based teeth bleaching, or at-home care.</p>
+									<p><a href="{{ url_for('blog_single_3') }}"
+											class="btn btn-primary btn-outline-primary">Read
+											more</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 ftco-animate">
+						<div class="blog-entry">
+							<a href="{{ url_for('blog_single_4') }}" class="block-20"
+								style="background-image: url('{{ url_for('static', filename='images/ortho4.jpg') }}');">
+							</a>
+							<div class="text d-flex py-4">
+								<div class="meta mb-3">
+									<div><a href="#">Sep. 20, 2021</a></div>
+									<div><a href="#">TRAN Marie </a></div>
+									<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+								</div>
+								<div class="desc pl-sm-3 pl-md-5">
+									<h3 class="heading"><a href="#">Dental Crowns</a></h3>
+									<p>A dental crown is a tooth-shaped “cap” that is placed over a tooth -- to cover
+										the tooth to restore its shape and size, strength, and improve its appearance.
+										The crowns, when cemented into place, fully encase the entire visible portion of
+										a tooth that lies at and above the gum line.</p>
+									<p><a href="{{ url_for('blog_single_4') }}"
+											class="btn btn-primary btn-outline-primary">Read
+											more</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 ftco-animate">
+						<div class="blog-entry" data-aos-delay="100">
+							<a href="{{ url_for('blog_single_5') }}" class="block-20"
+								style="background-image: url('{{ url_for('static', filename='images/ortho5.jpg') }}');">
+							</a>
+							<div class="text d-flex py-4">
+								<div class="meta mb-3">
+									<div><a href="#">Sep. 20, 2021</a></div>
+									<div><a href="#">TRAN Marie </a></div>
+									<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+								</div>
+								<div class="desc pl-sm-3 pl-md-5">
+									<h3 class="heading"><a href="#">Endodontic Treatment</a></h3>
+									<p>An endodontic treatment or a root canal is a treatment used to repair and save a
+										tooth that is badly decayed or becomes infected. During a root canal procedure,
+										the nerve and pulp are removed and the inside of the tooth is cleaned and
+										sealed. Without treatment, the tissue surrounding the tooth will become infected
+										and abscesses may form.</p>
+									<p><a href="{{ url_for('blog_single_5') }}"
+											class="btn btn-primary btn-outline-primary">Read
+											more</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 ftco-animate">
+						<div class="blog-entry" data-aos-delay="200">
+							<a href="{{ url_for('blog_single_6') }}" class="block-20"
+								style="background-image: url('{{ url_for('static', filename='images/ortho6.jpg') }}');">
+							</a>
+							<div class="text d-flex py-4">
+								<div class="meta mb-3">
+									<div><a href="#">Sep. 20, 2021</a></div>
+									<div><a href="#">TRAN Marie </a></div>
+									<div><a href="#" class="meta-chat"><span class="icon-chat"></span> 3</a></div>
+								</div>
+								<div class="desc pl-sm-3 pl-md-5">
+									<h3 class="heading"><a href="#">Composite Restoration</a></h3>
+									<p>Dental restoration is a treatment to restore the function, integrity, and
+										morphology of missing tooth structure resulting from caries or external trauma.
+									</p>
+									<p><a href="{{ url_for('blog_single_6') }}"
+											class="btn btn-primary btn-outline-primary">Read
+											more</a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<div class="row mt-5">
+					<div class="col">
+						<div class="block-27">
+							<ul>
+								<li><a href="#">&lt;</a></li>
+								<li class="active"><span>1</span></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#">&gt;</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>-->
+			</div> <!-- END: col-md-8 -->
+			<div class="col-md-4 sidebar ftco-animate">
+				<!--<div class="sidebar-box">
+					<form action="#" class="search-form">
+						<div class="form-group">
+							<span class="icon fa fa-search"></span>
+							<input type="text" class="form-control" placeholder="Type a keyword and hit enter">
+						</div>
+					</form>
+				</div>
+				<div class="sidebar-box ftco-animate">
+					<div class="categories">
+						<h3>Categories</h3>
+						<li><a href="#">Food <span>(12)</span></a></li>
+						<li><a href="#">Dish <span>(22)</span></a></li>
+						<li><a href="#">Desserts <span>(37)</span></a></li>
+						<li><a href="#">Drinks <span>(42)</span></a></li>
+						<li><a href="#">Ocassion <span>(14)</span></a></li>
+					</div>
+				</div>-->
+
+				<div class="sidebar-box ftco-animate">
+					<h3>Recent Blog</h3>
+					<div class="block-21 mb-4 d-flex">
+						<a class="blog-img mr-4"
+							style="background-image: url('{{ url_for('static', filename='images/ortho3.jpg') }}')"></a>
+						<div class="text">
+							<h3 class="heading"><a href="{{ url_for('blog_single_3') }}">Teeth Whitening</a></h3>
+							<div class="meta">
+								<div><a href="#"><span class="icon-calendar"></span> Sep. 20, 2021</a></div>
+								<div><a href="#"><span class="icon-person"></span> TRAN Marie </a></div>
+								<div><a href="#"><span class="icon-chat"></span> 3</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="block-21 mb-4 d-flex">
+						<a class="blog-img mr-4"
+							style="background-image: url('{{ url_for('static', filename='images/ortho4.jpg') }}')"></a>
+						<div class="text">
+							<h3 class="heading"><a href="{{ url_for('blog_single_4') }}">Dental Crowns</a></h3>
+							<div class="meta">
+								<div><a href="#"><span class="icon-calendar"></span> Sep. 20, 2021</a></div>
+								<div><a href="#"><span class="icon-person"></span> TRAN Marie </a></div>
+								<div><a href="#"><span class="icon-chat"></span> 3</a></div>
+							</div>
+						</div>
+					</div>
+					<div class="block-21 mb-4 d-flex">
+						<a class="blog-img mr-4"
+							style="background-image: url('{{ url_for('static', filename='images/ortho5.jpg') }}')"></a>
+						<div class="text">
+							<h3 class="heading"><a href="{{ url_for('blog_single_5') }}">Endodontic Treatment</a></h3>
+							<div class="meta">
+								<div><a href="#"><span class="icon-calendar"></span> Sep. 20, 2021</a></div>
+								<div><a href="#"><span class="icon-person"></span> TRAN Marie </a></div>
+								<div><a href="#"><span class="icon-chat"></span> 3</a></div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!--<div class="sidebar-box ftco-animate">
+					<h3>Tag Cloud</h3>
+					<div class="tagcloud">
+						<a href="#" class="tag-cloud-link">dish</a>
+						<a href="#" class="tag-cloud-link">menu</a>
+						<a href="#" class="tag-cloud-link">food</a>
+						<a href="#" class="tag-cloud-link">sweet</a>
+						<a href="#" class="tag-cloud-link">tasty</a>
+						<a href="#" class="tag-cloud-link">delicious</a>
+						<a href="#" class="tag-cloud-link">desserts</a>
+						<a href="#" class="tag-cloud-link">drinks</a>
+					</div>
+				</div>-->
+
+				<div class="sidebar-box ftco-animate">
+					<h3>Well Experience Dentist</h3>
+					<p>Our skilled and knowledgeable dentists have years of experience in delivering top-notch dental
+						care.</p>
+				</div>
+				<div class="sidebar-box ftco-animate">
+					<h3>High Technology Facilities</h3>
+					<p>Our commitment to investing in high-tech facilities demonstrates our dedication to providing you
+						with exceptional care.</p>
+				</div>
+				<div class="sidebar-box ftco-animate">
+					<h3>Comfortable Clinics</h3>
+					<p>Our clinics are equipped with modern amenities to ensure that you are comfortable throughout your
+						visit.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+{% endblock %}
