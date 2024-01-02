@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  docker_project_flask_container:
+    image: hiendinh2001/docker_project_flask:v1.0.0
+    container_name: docker_project_flask_container
+    ports:
+      - 5002:5000
+    volumes:
+      - ./:/app
+    networks:
+      - mysql-docker-project-network
+
+  mysql-docker-project-container:
+    image: mysql:8.0.28
+    container_name: mysql-docker-project-container
+    ports:
+      - 3309:3306
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+    volumes:
+      - mysql-docker-project-volume:/var/lib/mysql
+      - mysql-docker-project-volume-config:/etc/mysql
+    networks:
+      - mysql-docker-project-network
+
+  flask_phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
+    container_name: flask_phpmyadmin
+    ports:
+      - 5010:80
+    environment:
+      - PMA_HOST=mysql-docker-project-container
+      - PMA_USER=root
+      - PMA_PASSWORD=123456
+      - MYSQL_ROOT_PASSWORD=123456
+    networks:
+      - mysql-docker-project-network
+
+networks:
+  mysql-docker-project-network:
+    name: mysql-docker-project-network
+    external: true
+volumes:
+  mysql-docker-project-volume:
+  mysql-docker-project-volume-config:

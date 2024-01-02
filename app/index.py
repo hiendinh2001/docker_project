@@ -1,3 +1,5 @@
+import json
+from . import app, db, models
 from flask import render_template, request, redirect, url_for, session, jsonify, send_file, Response
 from app import app, login
 from app import utils
@@ -10,6 +12,7 @@ from datetime import date, datetime, timedelta
 import random
 from string import ascii_uppercase
 from flask_socketio import SocketIO, join_room, leave_room, send, emit
+import mysql.connector
 
 
 @app.route("/")
@@ -963,7 +966,54 @@ def patient_edit_address():
 def patient_export():
     return send_file(utils.export_csv())
 
+#Get list of products
+@app.route('/products')
+def get_products():
+    database = mysql.connector.connect(
+        host="mysql-docker-project-container",
+        user="root",
+        password="123456",
+        database="db_telemedicine_docker"
+    )
+    cursor = database.cursor()
+    cursor.execute("SELECT * FROM tblProduct")
+    row_headers=[x[0] for x in cursor.description]
+    products = cursor.fetchall()
+    json_data=[]
+    for product in products:
+        json_data.append(dict(zip(row_headers,product)))
+    cursor.close()
+    return json.dumps(json_data) #convert to JSON
 
-if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
-    socketio.run(app, debug=True)
+#use this function to create Database
+@app.route("/initdb")
+def initdb():
+    database = mysql.connector.connect(
+        host="mysql-docker-project-container",
+        user="root",
+        password="123456",
+    )
+    cursor = database.cursor()
+    cursor.execute("DROP DATABASE IF EXISTS db_telemedicine_docker")
+    cursor.execute("CREATE DATABASE db_telemedicine_docker")
+    cursor.close()
+    return 'init Database'
+
+#write a function to create tables
+@app.route('/init_tables')
+def init_tables():
+    database = mysql.connector.connect(
+        host="mysql-docker-project-container",
+        user="root",
+        password="123456",
+        database="db_telemedicine_docker"
+    )
+    cursor = database.cursor()
+
+    cursor.execute("DROP TABLE IF EXISTS tblProduct")
+    cursor.execute("""CREATE TABLE tblProduct """
+    """(id INT PRIMARY KEY AUTO_INCREMENT,"""
+    """name VARCHAR(255),""" 
+    """description VARCHAR(255))""")
+    cursor.close()
+    return "init_tables"
