@@ -484,7 +484,7 @@ def upload():
 @login_required
 def room_teleconsultation():
 
-    return redirect("http://127.0.0.1:3000/", code=302)
+    return redirect("http://127.0.0.1:3002/", code=302)
 
 # ------------------------ appointment ------------------------
 
